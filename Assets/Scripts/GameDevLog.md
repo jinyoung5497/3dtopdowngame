@@ -10,4 +10,19 @@
 
   25.08.23
 
+- add trailrenderer
+- enemy attack range fix
+- enemy shouldn't move when attacked
+- Enemy should be damaged once per attack
+- enemy animation idle => run => attack
+
+  26.08.23
+
 -
+
+=====================================TODO=======================================
+
+- Player Dash
+- Enemy Spawner
+- props collider and interaction
+- attack combo

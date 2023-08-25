@@ -30,7 +30,7 @@ public class EnemyAttack : MonoBehaviour
     if (enemyController.enemyCollision.encounterPlayer && !enemyController.playerController.playerMovement.isPlayerInvincible)
     {
       Vector3 pushPlayer = enemyController.enemyCollision.playerPos - transform.position;
-      enemyController.playerController.playerRb.AddForce(pushPlayer * 5000f * Time.fixedDeltaTime, ForceMode.Impulse);
+      enemyController.playerController.playerRb.AddForce(pushPlayer * 15000f * Time.fixedDeltaTime, ForceMode.Impulse);
       enemyController.enemyAttackDelay = 0;
       //* enemy can only damage player once at a time
       enemyCanAttack = true;

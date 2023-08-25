@@ -12,12 +12,13 @@ GameObject:
   - component: {fileID: 5599079007656693555}
   - component: {fileID: 7662624046494366713}
   - component: {fileID: 9049577014151554939}
+  - component: {fileID: 3241790806212224359}
   m_Layer: 0
   m_Name: box
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 18
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &8798968401859330198
 Transform:
@@ -93,21 +94,34 @@ LODGroup:
   m_GameObject: {fileID: 8167251024386857516}
   serializedVersion: 2
   m_LocalReferencePoint: {x: -0.0017605424, y: 0.29231414, z: 0}
-  m_Size: 0.70146847
+  m_Size: 1
   m_FadeMode: 0
   m_AnimateCrossFading: 0
   m_LastLODIsBillboard: 0
   m_LODs:
-  - screenRelativeHeight: 0.6
+  - screenRelativeHeight: 0.49726993
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 7662624046494366713}
-  - screenRelativeHeight: 0.3
+  - screenRelativeHeight: 0.19914292
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 7662624046494366713}
-  - screenRelativeHeight: 0.1
+  - screenRelativeHeight: 0.06292685
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 7662624046494366713}
   m_Enabled: 1
+--- !u!65 &3241790806212224359
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8167251024386857516}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.6753149, y: 0.5846283, z: 0.70146847}
+  m_Center: {x: -0.0017605275, y: 0.29231414, z: 0}

@@ -12,12 +12,13 @@ GameObject:
   - component: {fileID: 2761909787043994123}
   - component: {fileID: 121791908799213249}
   - component: {fileID: 1617114119647588935}
+  - component: {fileID: 1468407734210720795}
   m_Layer: 0
   m_Name: barrel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 18
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1295802783615784366
 Transform:
@@ -100,16 +101,29 @@ LODGroup:
   m_AnimateCrossFading: 0
   m_LastLODIsBillboard: 0
   m_LODs:
-  - screenRelativeHeight: 0.6
+  - screenRelativeHeight: 0.2972957
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 121791908799213249}
-  - screenRelativeHeight: 0.3
+  - screenRelativeHeight: 0.14864784
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 121791908799213249}
-  - screenRelativeHeight: 0.1
+  - screenRelativeHeight: 0.04954928
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 121791908799213249}
   m_Enabled: 1
+--- !u!65 &1468407734210720795
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1923122152959233812}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.9215202, y: 2.0181928, z: 1.921521}
+  m_Center: {x: 0.00000008940697, y: 0.98897946, z: -0.00096678734}

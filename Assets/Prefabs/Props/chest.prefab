@@ -12,12 +12,13 @@ GameObject:
   - component: {fileID: 6023313854063997239}
   - component: {fileID: 8391309192849032701}
   - component: {fileID: 7183943863304591719}
+  - component: {fileID: 3689515045650414643}
   m_Layer: 0
   m_Name: chest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 18
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &7221741478876511890
 Transform:
@@ -106,8 +107,21 @@ LODGroup:
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 8391309192849032701}
-  - screenRelativeHeight: 0.1
+  - screenRelativeHeight: 0.037207518
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 8391309192849032701}
   m_Enabled: 1
+--- !u!65 &3689515045650414643
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8030788056775861288}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.2952404, y: 0.8377352, z: 0.8773523}
+  m_Center: {x: -0.002056867, y: 0.4188676, z: -0.0000004172325}

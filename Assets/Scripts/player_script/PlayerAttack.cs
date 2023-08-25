@@ -10,6 +10,7 @@ public class PlayerAttack : MonoBehaviour
   private bool attackReady = true;
   private float attackDelay;
   private WeaponController weapon;
+  private TrailRenderer trailRenderer;
 
   // Start is called before the first frame update
   void Awake()
@@ -36,15 +37,16 @@ public class PlayerAttack : MonoBehaviour
 
   IEnumerator HoldAttack()
   {
+    trailRenderer = playerController.weapons[playerController.weaponIndex].GetComponentInChildren<TrailRenderer>();
+    trailRenderer.enabled = true;
     attackReady = false;
     playerController.animator.SetTrigger("isAttack");
     setAttack = true;
     yield return new WaitForSeconds(0.5f);
     playerController.playerAttackTrigger.enabled = true;
-    playerController.trailRenderer.enabled = true;
+    trailRenderer.enabled = false;
     yield return new WaitForSeconds(0.6f);
     playerController.playerAttackTrigger.enabled = false;
-    playerController.trailRenderer.enabled = false;
     setAttack = false;
     attackReady = true;
   }
@@ -56,7 +58,7 @@ public class PlayerAttack : MonoBehaviour
       //* Enemy Knock Back
       Vector3 enemyknockBackDir = playerController.playerCollision.nearEnemy.transform.position - transform.position;
 
-      playerController.playerCollision.nearEnemy.enemyRb.AddForce(enemyknockBackDir * 500f * Time.fixedDeltaTime, ForceMode.Impulse);
+      playerController.playerCollision.nearEnemy.enemyRb.AddForce(enemyknockBackDir * 1000f * Time.fixedDeltaTime, ForceMode.Impulse);
 
       //* Get weapon and calculate damage
       WeaponController weapon = playerController.weapons[playerController.weaponIndex].GetComponent<WeaponController>();

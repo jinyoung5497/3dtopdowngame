@@ -31,7 +31,7 @@ public class EnemyController : MonoBehaviour
   // Start is called before the first frame update
   void Awake()
   {
-    animator = GetComponent<Animator>();
+    animator = GetComponentInChildren<Animator>();
     enemyRb = GetComponent<Rigidbody>();
     enemyStartPos = transform.position;
     enemyStartRotation = transform.rotation;

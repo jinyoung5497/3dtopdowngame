@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8524294482508996010}
   - component: {fileID: 5884119913917163872}
   - component: {fileID: 5073588942909421030}
+  - component: {fileID: 9169241417631375630}
   m_Layer: 0
   m_Name: arc_door_wall
   m_TagString: Untagged
@@ -98,16 +99,29 @@ LODGroup:
   m_AnimateCrossFading: 0
   m_LastLODIsBillboard: 0
   m_LODs:
-  - screenRelativeHeight: 0.6
+  - screenRelativeHeight: 0.71645224
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 5884119913917163872}
-  - screenRelativeHeight: 0.3
+  - screenRelativeHeight: 0.47287425
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 5884119913917163872}
-  - screenRelativeHeight: 0.1
+  - screenRelativeHeight: 0.16310532
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 5884119913917163872}
   m_Enabled: 1
+--- !u!65 &9169241417631375630
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5379668033234667701}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.7385576, y: 3.9380922, z: 0.72502685}
+  m_Center: {x: 0, y: 1.9475269, z: 0}

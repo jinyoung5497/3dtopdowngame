@@ -28,9 +28,11 @@ public class EnemyMovement : MonoBehaviour
 
   void EnemyMovements()
   {
-    if (enemyController.enemyAggroArea.playerEnterAggroArea || enemyAggro)
+    if ((enemyController.enemyAggroArea.playerEnterAggroArea || enemyAggro) && !enemyController.playerController.playerCollision.isPlayerInRange)
     {
       Vector3 playerDir = (enemyController.playerController.transform.position - transform.position).normalized;
+
+      enemyController.animator.SetBool("isWalk", true);
 
       transform.position += playerDir * enemyController.enemySpeed * Time.deltaTime;
 
@@ -61,6 +63,7 @@ public class EnemyMovement : MonoBehaviour
     }
     else
     {
+      enemyController.animator.SetBool("isWalk", false);
       return false;
     }
   }
