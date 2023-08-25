@@ -27,7 +27,6 @@ public class EnemyCollision : MonoBehaviour
   {
     if (other.gameObject.CompareTag("Player"))
     {
-      enemyController.animator.SetTrigger("isAttack");
       encounterPlayer = true;
       playerPos = other.gameObject.transform.position;
     }

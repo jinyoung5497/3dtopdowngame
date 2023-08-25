@@ -9,6 +9,7 @@ public class PlayerInput : MonoBehaviour
   internal bool isJump;
   internal bool isInteract;
   internal bool isAttack;
+  internal bool isDash;
 
   // Update is called once per frame
   void Update()
@@ -21,5 +22,6 @@ public class PlayerInput : MonoBehaviour
     isJump = Input.GetButtonDown("Jump");
     isInteract = Input.GetButtonDown("Interact");
     isAttack = Input.GetButtonDown("Fire1");
+    isDash = Input.GetButtonDown("Dash");
   }
 }

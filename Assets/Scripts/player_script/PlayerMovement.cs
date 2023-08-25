@@ -21,6 +21,7 @@ public class PlayerMovement : MonoBehaviour
   private float playerInvincibleEndDuration = 2f;
   private bool isPlayerInvincibleDuration;
   internal bool isPlayerInvincible;
+  private bool isDashing;
 
   void Update()
   {
@@ -28,6 +29,7 @@ public class PlayerMovement : MonoBehaviour
     Rotation();
     JumpAnimation();
     Jump();
+    Dash();
   }
 
   private void FixedUpdate()
@@ -156,5 +158,23 @@ public class PlayerMovement : MonoBehaviour
       playerController.animator.SetBool("isJump", true);
       playerController.animator.SetBool("isRun", false);
     }
+  }
+
+  void Dash()
+  {
+    if (playerController.playerInput.isDash && isGround && !playerController.playerAttack.setAttack && !isDashing)
+    {
+      StartCoroutine("DashDuration");
+    }
+  }
+
+  IEnumerator DashDuration()
+  {
+    isDashing = true;
+    playerController.animator.SetTrigger("isRoll");
+    Vector3 dashDir = new Vector3(horizontalInput, 0, verticalInput).normalized;
+    playerController.playerRb.AddForce(dashDir * 5000f);
+    yield return new WaitForSeconds(0.7f);
+    isDashing = false;
   }
 }

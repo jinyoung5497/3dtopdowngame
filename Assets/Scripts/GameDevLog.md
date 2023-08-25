@@ -14,7 +14,8 @@
 - enemy attack range fix
 - enemy shouldn't move when attacked
 - Enemy should be damaged once per attack
-- enemy animation idle => run => attack
+- Player Dash
+- attack combo
 
   26.08.23
 
@@ -22,7 +23,8 @@
 
 =====================================TODO=======================================
 
-- Player Dash
+- level design forest
 - Enemy Spawner
 - props collider and interaction
-- attack combo
+- enemy animation idle => run => attack
+- Enemy should be damaged once per attack
