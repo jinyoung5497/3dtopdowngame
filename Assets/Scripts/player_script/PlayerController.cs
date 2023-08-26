@@ -44,6 +44,8 @@ public class PlayerController : MonoBehaviour
     animator = GetComponent<Animator>();
     playerAttackTrigger = GetComponent<SphereCollider>();
     trailRenderer = weapons[weaponIndex].GetComponent<TrailRenderer>();
+    Cursor.lockState = CursorLockMode.Locked;
+    Cursor.visible = false;
   }
 
   // Update is called once per frame

@@ -19,7 +19,11 @@
 
   26.08.23
 
--
+- attack combo design
+- level design forest
+- skybox
+- height fog
+- camera location fix
 
 =====================================TODO=======================================
 

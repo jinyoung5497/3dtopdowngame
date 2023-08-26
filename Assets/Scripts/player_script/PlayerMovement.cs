@@ -30,6 +30,7 @@ public class PlayerMovement : MonoBehaviour
     JumpAnimation();
     Jump();
     Dash();
+    JumpGravityMultiplier();
   }
 
   private void FixedUpdate()
@@ -60,18 +61,19 @@ public class PlayerMovement : MonoBehaviour
     if (playerPosition != Vector3.zero)
     {
       playerController.animator.SetBool("isRun", true);
-      playerController.playerRb.mass = 1;
+      // playerController.playerRb.mass = 1;
     }
     else
     {
       playerController.animator.SetBool("isRun", false);
-      playerController.playerRb.mass = 2;
+      // playerController.playerRb.mass = 2;
     }
 
     //* Player Movement Input unless it hits the wall
     if (!isWall)
     {
-      transform.position += (isGround ? playerPosition : jumpVector) * moveSpeed * Time.deltaTime;
+      // transform.position += (isGround ? playerPosition : jumpVector) * moveSpeed * Time.deltaTime;
+      transform.position += playerPosition * moveSpeed * Time.deltaTime;
     }
   }
 
@@ -119,7 +121,11 @@ public class PlayerMovement : MonoBehaviour
 
   void Rotation()
   {
-    if (isGround && playerPosition != Vector3.zero && !playerController.playerDeath.isDeath && !isClimbing)
+    // if (isGround && playerPosition != Vector3.zero && !playerController.playerDeath.isDeath && !isClimbing)
+    // {
+    //   transform.LookAt(playerPosition + transform.position);
+    // }
+    if (playerPosition != Vector3.zero && !playerController.playerDeath.isDeath && !isClimbing)
     {
       transform.LookAt(playerPosition + transform.position);
     }
@@ -147,6 +153,18 @@ public class PlayerMovement : MonoBehaviour
       playerController.playerRb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
       jumpVector = playerPosition;
       isGround = false;
+    }
+  }
+
+  void JumpGravityMultiplier()
+  {
+    if (!isGround)
+    {
+      playerController.playerRb.mass += Time.deltaTime * 10000f;
+    }
+    else
+    {
+      playerController.playerRb.mass = 1;
     }
   }
 
