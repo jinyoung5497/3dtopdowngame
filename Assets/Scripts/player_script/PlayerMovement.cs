@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
   [SerializeField] internal PlayerController playerController;
+  [SerializeField] internal Transform cameraPosition;
   [SerializeField] private float jumpForce = 20f;
   internal bool isGround;
   internal bool isClimbing;
@@ -13,7 +14,7 @@ public class PlayerMovement : MonoBehaviour
   private float verticalInput;
   private bool isWall;
   private Vector3 playerPosition;
-  private Vector3 jumpVector;
+  private Vector3 moveDir;
   private float playerStunStartDuration = 0f;
   private float playerStunEndDuration = 0.5f;
   private bool isPlayerStunned;
@@ -22,6 +23,9 @@ public class PlayerMovement : MonoBehaviour
   private bool isPlayerInvincibleDuration;
   internal bool isPlayerInvincible;
   private bool isDashing;
+  float turnSmoothTime = 0.1f;
+  float turnSmoothVelocity;
+  float targetAngle;
 
   void Update()
   {
@@ -61,19 +65,19 @@ public class PlayerMovement : MonoBehaviour
     if (playerPosition != Vector3.zero)
     {
       playerController.animator.SetBool("isRun", true);
-      // playerController.playerRb.mass = 1;
     }
     else
     {
       playerController.animator.SetBool("isRun", false);
-      // playerController.playerRb.mass = 2;
     }
 
     //* Player Movement Input unless it hits the wall
-    if (!isWall)
+    if (!isWall && playerPosition != Vector3.zero)
     {
       // transform.position += (isGround ? playerPosition : jumpVector) * moveSpeed * Time.deltaTime;
-      transform.position += playerPosition * moveSpeed * Time.deltaTime;
+      moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
+
+      transform.position += moveDir.normalized * moveSpeed * Time.deltaTime;
     }
   }
 
@@ -127,7 +131,11 @@ public class PlayerMovement : MonoBehaviour
     // }
     if (playerPosition != Vector3.zero && !playerController.playerDeath.isDeath && !isClimbing)
     {
-      transform.LookAt(playerPosition + transform.position);
+      // transform.LookAt(playerPosition + transform.position);
+      targetAngle = Mathf.Atan2(playerPosition.x, playerPosition.z) * Mathf.Rad2Deg + cameraPosition.eulerAngles.y;
+      float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
+      transform.rotation = Quaternion.Euler(0f, angle, 0f);
+
     }
   }
 
@@ -151,7 +159,7 @@ public class PlayerMovement : MonoBehaviour
     if (playerController.playerInput.isJump && isGround)
     {
       playerController.playerRb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
-      jumpVector = playerPosition;
+      // jumpVector = playerPosition;
       isGround = false;
     }
   }
@@ -191,7 +199,7 @@ public class PlayerMovement : MonoBehaviour
     isDashing = true;
     playerController.animator.SetTrigger("isRoll");
     Vector3 dashDir = new Vector3(horizontalInput, 0, verticalInput).normalized;
-    playerController.playerRb.AddForce(dashDir * 5000f);
+    playerController.playerRb.AddForce(moveDir.normalized * 5000f);
     yield return new WaitForSeconds(0.7f);
     isDashing = false;
   }

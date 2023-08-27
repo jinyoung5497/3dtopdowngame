@@ -25,10 +25,18 @@
 - height fog
 - camera location fix
 
+  27.08.23
+
+- level design forest
+-
+
 =====================================TODO=======================================
 
 - level design forest
 - Enemy Spawner
-- props collider and interaction
+- Fall respawn
+- player respawn location
+- UI
+- props collider and interaction (chest, door, npc)
 - enemy animation idle => run => attack
 - Enemy should be damaged once per attack

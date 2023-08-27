@@ -12,8 +12,6 @@ GameObject:
   - component: {fileID: 6722541008616898934}
   - component: {fileID: 8840482677116876220}
   - component: {fileID: 7885276857828325901}
-  - component: {fileID: 7810733509171154471}
-  - component: {fileID: 3771340159360499193}
   m_Layer: 0
   m_Name: bridge_02
   m_TagString: Ground
@@ -100,43 +98,3 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -6194925050469909050, guid: a384341516c6a5c4ea2414dbcd16c34a, type: 3}
---- !u!205 &7810733509171154471
-LODGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7038924284762526825}
-  serializedVersion: 2
-  m_LocalReferencePoint: {x: 0.0005540848, y: -0.013522148, z: -0.013697863}
-  m_Size: 18.654274
-  m_FadeMode: 0
-  m_AnimateCrossFading: 0
-  m_LastLODIsBillboard: 0
-  m_LODs:
-  - screenRelativeHeight: 0.91040295
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 8840482677116876220}
-  - screenRelativeHeight: 0.7902431
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 8840482677116876220}
-  - screenRelativeHeight: 0.7902431
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 8840482677116876220}
-  m_Enabled: 1
---- !u!65 &3771340159360499193
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7038924284762526825}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 18.654274, y: 3.859962, z: 3.277032}
-  m_Center: {x: 0.0005540848, y: -0.013522208, z: -0.013697803}

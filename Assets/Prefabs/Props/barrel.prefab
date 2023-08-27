@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 1295802783615784366}
   - component: {fileID: 2761909787043994123}
   - component: {fileID: 121791908799213249}
-  - component: {fileID: 1617114119647588935}
   - component: {fileID: 1468407734210720795}
   m_Layer: 0
   m_Name: barrel
@@ -87,33 +86,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!205 &1617114119647588935
-LODGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1923122152959233812}
-  serializedVersion: 2
-  m_LocalReferencePoint: {x: 0.00000011920929, y: 0.98897946, z: -0.00096678734}
-  m_Size: 2.0181928
-  m_FadeMode: 0
-  m_AnimateCrossFading: 0
-  m_LastLODIsBillboard: 0
-  m_LODs:
-  - screenRelativeHeight: 0.2972957
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 121791908799213249}
-  - screenRelativeHeight: 0.14864784
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 121791908799213249}
-  - screenRelativeHeight: 0.04954928
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 121791908799213249}
-  m_Enabled: 1
 --- !u!65 &1468407734210720795
 BoxCollider:
   m_ObjectHideFlags: 0
